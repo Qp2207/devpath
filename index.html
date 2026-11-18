@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Học HTML, CSS và JavaScript bằng tiếng Việt, viết mã trực tiếp và theo dõi tiến độ học của bạn.">
+  <meta name="theme-color" content="#0b0f1c">
+  <title>DevPath — Học lập trình web</title>
+  <link rel="icon" href="./assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="./assets/fonts.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script defer src="./lessons.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Đến nội dung</a>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Điều hướng chính">
+      <a class="brand" href="#tong-quan" aria-label="DevPath, tổng quan">
+        <span class="brand-mark icon" aria-hidden="true">code</span>
+        <span>Dev<span class="brand-accent">Path</span></span>
+      </a>
+      <nav>
+        <p class="nav-label">HỌC TẬP</p>
+        <a class="nav-link active" data-page="tong-quan" href="#tong-quan" aria-current="page"><span class="icon" aria-hidden="true">dashboard</span>Tổng quan</a>
+        <a class="nav-link" data-page="lo-trinh" href="#lo-trinh"><span class="icon" aria-hidden="true">route</span>Lộ trình học</a>
+        <a class="nav-link" data-page="thuc-hanh" href="#thuc-hanh"><span class="icon" aria-hidden="true">terminal</span>Thực hành</a>
+        <a class="nav-link" data-page="tai-lieu" href="#tai-lieu"><span class="icon" aria-hidden="true">auto_stories</span>Tài liệu</a>
+        <p class="nav-label course-nav-label">KHÓA HỌC</p>
+        <a class="nav-link course-nav" data-page="html" href="#khoa-hoc/html"><span class="nav-dot html-dot"></span>HTML cơ bản</a>
+        <a class="nav-link course-nav" data-page="css" href="#khoa-hoc/css"><span class="nav-dot css-dot"></span>CSS hiện đại</a>
+        <a class="nav-link course-nav" data-page="js" href="#khoa-hoc/js"><span class="nav-dot js-dot"></span>JavaScript</a>
+      </nav>
+      <a class="sidebar-progress" href="#tien-do">
+        <div class="progress-heading"><span class="icon" aria-hidden="true">bar_chart</span><span>Tiến độ học tập</span></div>
+        <progress id="sidebar-meter" value="0" max="12" aria-label="Số bài học đã hoàn thành"></progress>
+        <span class="progress-caption" id="sidebar-caption">0/12 bài đã hoàn thành</span>
+      </a>
+    </aside>
+    <button class="mobile-backdrop" id="mobile-backdrop" aria-label="Đóng menu" hidden></button>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-title">
+          <button class="icon-button menu-button" id="menu-button" aria-label="Mở menu" aria-controls="sidebar" aria-expanded="false"><span class="icon" aria-hidden="true">menu</span></button>
+          <span id="page-label">Tổng quan</span>
+        </div>
+        <div class="topbar-actions">
+          <button class="search-trigger" id="search-trigger" aria-label="Tìm bài học"><span class="icon" aria-hidden="true">search</span><span class="search-label">Tìm bài học...</span><kbd><span id="shortcut-modifier">Ctrl</span> K</kbd></button>
+          <a class="progress-link" href="#tien-do" aria-label="Xem tiến độ học tập"><span class="icon" aria-hidden="true">bar_chart</span></a>
+        </div>
+      </header>
+
+      <main id="main" class="content" tabindex="-1">
+        <section id="overview" aria-label="Tổng quan học tập">
+          <section class="hero" aria-labelledby="hero-heading">
+            <div class="hero-content">
+              <div class="hero-kicker"><span class="hero-dot"></span>LỘ TRÌNH FRONT-END</div>
+              <h1 id="hero-heading">Học lập trình web<br><span>theo cách của bạn.</span></h1>
+              <p>Nắm vững HTML, CSS và JavaScript qua từng bài học ngắn và bài tập thực hành ngay trên trình duyệt.</p>
+              <div class="hero-actions">
+                <a class="button primary" href="#khoa-hoc/html" id="hero-start">Bắt đầu học <span class="icon" aria-hidden="true">arrow_forward</span></a>
+                <a class="button secondary" href="#lo-trinh">Xem lộ trình</a>
+              </div>
+            </div>
+            <div class="hero-preview" aria-hidden="true">
+              <div class="code-window">
+                <div class="window-bar"><div class="window-dots"><i></i><i></i><i></i></div><span>index.html</span><span class="icon" aria-hidden="true">code</span></div>
+                <div class="window-code">
+                  <div><i>1</i><code><span class="syn-muted">&lt;!DOCTYPE html&gt;</span></code></div>
+                  <div><i>2</i><code><span class="syn-purple">&lt;html</span> <span class="syn-blue">lang</span>=<span class="syn-green">"vi"</span><span class="syn-purple">&gt;</span></code></div>
+                  <div><i>3</i><code>&nbsp; <span class="syn-purple">&lt;body&gt;</span></code></div>
+                  <div><i>4</i><code>&nbsp; &nbsp; <span class="syn-purple">&lt;h1&gt;</span>Xin chào, thế giới!<span class="syn-purple">&lt;/h1&gt;</span></code></div>
+                  <div><i>5</i><code>&nbsp; &nbsp; <span class="syn-purple">&lt;p&gt;</span>Trang web đầu tiên.<span class="syn-purple">&lt;/p&gt;</span></code></div>
+                  <div><i>6</i><code>&nbsp; <span class="syn-purple">&lt;/body&gt;</span></code></div>
+                  <div><i>7</i><code><span class="syn-purple">&lt;/html&gt;</span></code></div>
+                </div>
+              </div>
+              <div class="code-status"><span class="icon" aria-hidden="true">check</span> Trang web đã sẵn sàng</div>
+            </div>
+          </section>
+
+          <section class="catalog" aria-labelledby="catalog-heading">
+            <div class="section-heading">
+              <div>
+                <h2 id="catalog-heading">Khóa học của bạn</h2>
+                <p>12 bài học có ví dụ và bài tập thực hành.</p>
+              </div>
+              <div class="filters" aria-label="Lọc khóa học">
+                <button type="button" data-filter="all" aria-pressed="true">Tất cả</button>
+                <button type="button" data-filter="learning" aria-pressed="false">Đang học</button>
+                <button type="button" data-filter="done" aria-pressed="false">Đã hoàn thành</button>
+              </div>
+            </div>
+            <div class="course-grid" id="course-grid"></div>
+          </section>
+
+          <section class="practice-banner">
+            <div class="practice-mark icon" aria-hidden="true">terminal</div>
+            <div><h2>Thử sức với Playground</h2><p>Viết mã và xem kết quả ngay trên trình duyệt.</p></div>
+            <a class="button secondary" href="#thuc-hanh">Mở Playground <span class="icon" aria-hidden="true">arrow_outward</span></a>
+          </section>
+        </section>
+
+        <div id="detail" hidden></div>
+      </main>
+      <footer class="footer"><span>DevPath</span><span>Học lập trình web bằng tiếng Việt</span></footer>
+    </div>
+  </div>
+
+  <dialog class="search-dialog" id="search-dialog" aria-label="Tìm bài học">
+    <div class="search-field"><span class="icon" aria-hidden="true">search</span><input id="search-input" type="search" placeholder="Tìm tên bài học hoặc chủ đề..." aria-label="Từ khóa tìm kiếm" autocomplete="off"><button type="button" class="icon-button" id="search-close" aria-label="Đóng tìm kiếm"><span class="icon" aria-hidden="true">close</span></button></div>
+    <div class="search-results" id="search-results"></div>
+  </dialog>
+  <div id="status" class="sr-only" role="status"></div>
+</body>
+</html>
